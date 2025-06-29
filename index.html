@@ -6,56 +6,273 @@
     <title>Armaan Gyawali</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+            color: #1a1a1a;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            background: #fff;
+            color: #222;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        nav .left a {
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: #2193b0;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        nav .right a {
+            margin-left: 1.7rem;
+            color: #2193b0;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+        }
+        nav .right a:hover {
+            color: #17627a;
+        }
+        nav .right i {
+            margin-right: 0.5em;
+        }
+        main {
+            max-width: 1000px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+        section {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+            margin-bottom: 2.5rem;
+            padding: 2.5rem 2rem;
+        }
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            gap: 2.5rem;
+            background: linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%);
+            color: #fff;
+            box-shadow: 0 4px 24px rgba(33,147,176,0.10);
+        }
+        .hero-section .text {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero-section h2 {
+            margin-top: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+        .hero-section .links {
+            margin-top: 2rem;
+        }
+        .hero-section .links a {
+            display: inline-block;
+            margin-right: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            background: rgba(33,147,176,0.18);
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+        }
+        .hero-section .links a:hover {
+            background: #fff;
+            color: #2193b0;
+        }
+        .hero-section .links i {
+            margin-right: 0.4em;
+        }
+        .hero-section .headshot {
+            flex: 1;
+            min-width: 220px;
+            max-width: 260px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-section .headshot img {
+            width: 220px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 24px rgba(33,147,176,0.15);
+            background: #eee;
+            display: block;
+        }
+        #skills .cells {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+        #skills .cell {
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            border-radius: 10px;
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 120px;
+            box-shadow: 0 2px 8px rgba(253,160,133,0.10);
+            transition: transform 0.15s;
+        }
+        #skills .cell:hover {
+            transform: translateY(-6px) scale(1.04);
+        }
+        #skills .cell img {
+            width: 54px;
+            height: 54px;
+            margin-bottom: 0.7rem;
+        }
+        #skills .cell span {
+            font-weight: 600;
+            color: #222;
+        }
+        #projects ul {
+            padding-left: 1.2rem;
+        }
+        #projects li {
+            margin-bottom: 0.9rem;
+        }
+        #projects a {
+            color: #2193b0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        #projects a:hover {
+            color: #6dd5ed;
+            text-decoration: underline;
+        }
+        .contact-section .group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            align-items: flex-start;
+        }
+        .contact-section .text {
+            flex: 2;
+        }
+        .contact-section form {
+            flex: 1;
+            min-width: 260px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            background: #f6d365;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(246,211,101,0.10);
+        }
+        .contact-section input,
+        .contact-section textarea {
+            padding: 0.6rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1rem;
+            background: #fff;
+        }
+        .contact-section button {
+            background: #2193b0;
+            color: #fff;
+            border: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .contact-section button:hover {
+            background: #17627a;
+        }
+        @media (max-width: 900px) {
+            main {
+                padding: 0 0.5rem;
+            }
+            .hero-section {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+                text-align: center;
+            }
+            .hero-section .text {
+                align-items: center;
+            }
+            .hero-section .headshot {
+                margin-bottom: 1.5rem;
+            }
+            .contact-section .group {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <!-- Navbar -->
-     <nav>
+    <nav>
         <div class="left">
             <a href="/">Armaan Gyawali</a>
         </div>
-
         <div class="right">
             <a href="http://github.com/ArmaanGyawali" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-github" aria-label="GitHub"></i>
                 <span>Github</span>
             </a>
-
-             <a href="https://www.linkedin.com/in/armaan-gyawali-7a84852a8/" target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-linkedin"></i>
-    <span>Linkedin</span>
-</a>
-
-            <a href="mailto:armaangyawali7@gmail.com" >
+            <a href="https://www.linkedin.com/in/armaan-gyawali-7a84852a8/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i>
+                <span>Linkedin</span>
+            </a>
+            <a href="mailto:armaangyawali7@gmail.com">
                 <i class="fa-solid fa-envelope"></i>
                 <span>Email</span>
             </a>
         </div>
-     </nav> 
+    </nav>
 
-     <main>
+    <main>
         <!-- Hero Section -->
         <section class="hero-section">
+            <div class="headshot">
+                <img src="images/image.jpeg" alt="Portrait of Armaan Gyawali" class="profile-pic" loading="lazy" width="220" height="280">
+            </div>
             <div class="text">
-                <h2>Hi, I'm Armaan👋</h2>
-                <p>A first-year Software Engineering student currently pursuing my Bachelor's degree. I'm passionate about technology and excited to start my journey in coding and web development. I'm learning the fundamentals of programming and enjoy exploring how software can solve real-world problems.</p>
-
+                <h2>Hi, I'm Armaan 👋</h2>
+                <p>
+                    A first-year Software Engineering student currently pursuing my Bachelor's degree. I'm passionate about technology and excited to start my journey in coding and web development. I'm learning the fundamentals of programming and enjoy exploring how software can solve real-world problems.
+                </p>
                 <div class="links">
                     <a href="#skills">
                         <i class="fa-solid fa-code"></i>
                         <span>Skills</span>
                     </a>
-
                     <a href="#contact">
                         <i class="fa-solid fa-envelope"></i>
                         <span>Contact</span>
                     </a>
-
                 </div>
-            </div>
-
-            <div class="headshot" style="border: 3px solid #ccc; border-radius: 12px; overflow: hidden; width: 200px; height: 200px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-                <img src="images/image.jpeg" alt="Profile picture of Armaan Gyawali" class="profile-pic" loading="lazy" width="200" height="200" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0;">
             </div>
         </section>
 
@@ -63,62 +280,78 @@
         <section id="skills">
             <h2>Skills</h2>
             <div class="text">
-                I’m learning the basics of web development, including HTML, CSS, and JavaScript. I’ve also started exploring tools like React and Node.js to build interactive websites.
+            I’m learning the basics of web development, including HTML, CSS, and JavaScript. I’ve also started exploring tools like React and Node.js to build interactive websites.
             </div>
-
             <div class="cells">
-                <div class="cell">
-                    <img src="images/html-logo.webp" alt="HTML logo">
-                    <span>HTML</span>
-                </div>
-
-                <div class="cell">
-                    <img src="images/css-logo.webp" alt="CSS logo">
-                    <span>CSS</span>
-                </div>
-
-                <div class="cell">
-                    <img src="images/javascript-logo.webp" alt="JavaScript logo">
-                    <span>JavaScript</span>
-                </div>
-
-                <div class="cell">
-                    <img src="images/node-logo.webp" alt="Node.js logo">
-                    <span>Node.js</span>
-                </div>
-
-                <div class="cell">
-                    <img src="images/react-logo.webp" alt="React.js logo">
-                    <span>React.js</span>
-                </div>
-
+            <div class="cell">
+                <img src="images/html-logo.webp" alt="HTML logo" width="54" height="54">
+                <span>HTML</span>
             </div>
+            <div class="cell">
+                <img src="images/css-logo.webp" alt="CSS logo" width="54" height="54">
+                <span>CSS</span>
+            </div>
+            <div class="cell">
+                <img src="images/javascript-logo.webp" alt="JavaScript logo" width="54" height="54">
+                <span>JavaScript</span>
+            </div>
+            <div class="cell">
+                <img src="images/node-logo.webp" alt="Node.js logo" width="54" height="54">
+                <span>Node.js</span>
+            </div>
+            <div class="cell">
+                <img src="images/react-logo.webp" alt="React logo" width="54" height="54">
+                <span>React</span>
+            </div>
+            </div>
+        </section>
+
+        <div style="height: 2.5rem;"></div>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="text">
+            Here’s a project I’ve worked on:
+            </div>
+            <ul>
+            <li>
+                <a href="https://armaangyawali.github.io/Ecommerce-store/" target="_blank" rel="noopener noreferrer">
+                Ecommerce Store
+                </a>
+            </li>
+            <li>
+                <a href="images/Latex CV.pdf" download>
+                Download CV (PDF)
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/ArmaanGyawali/Python-guess-game/blob/main/guess_game.py" target="_blank" rel="noopener noreferrer">
+                Python Guessing Game
+                </a>
+            </li>
+            </ul>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="contact-section">
             <h2>Contact</h2>
-
             <div class="group">
                 <div class="text">
-                    Thanks for visiting my portfolio! If you’d like to get in touch, feel free to drop me an email. I’d be happy to connect or chat about tech and projects. <br> 📧 Email: armaangyawali7@gmail.com
+                    Thanks for visiting my portfolio! If you’d like to get in touch, feel free to drop me an email. I’d be happy to connect or chat about tech and projects.<br>
+                    📧 Email: <a href="mailto:armaangyawali7@gmail.com">armaangyawali7@gmail.com</a>
                 </div>
-
-                <form>
+                <form action="https://formspree.io/f/yourFormIDHere" method="POST" autocomplete="on">
                     <label for="name">Name</label>
-                    <input type="text" id="name">
-
+                    <input type="text" id="name" name="name" required autocomplete="name">
                     <label for="email">Email</label>
-                    <input type="email" id="email">
-
+                    <input type="email" id="email" name="email" required autocomplete="email">
                     <label for="message">Message</label>
-                    <textarea id="message"></textarea>
-
+                    <textarea id="message" name="message" rows="4" required></textarea>
                     <button type="submit">Send Message</button>
                 </form>
             </div>
         </section>
-     </main>
-    
+    </main>
 </body>
 </html>

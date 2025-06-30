@@ -3,355 +3,494 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Armaan Gyawali</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Armaan Gyawali | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
-            color: #1a1a1a;
+        :root {
+            --primary: #1e3c72;
+            --secondary: #2a5298;
+            --accent: #f7971e;
+            --bg: #f5f8fa;
+            --white: #fff;
+            --shadow: 0 4px 32px rgba(30,60,114,0.10);
+            --radius: 18px;
         }
-        nav {
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--bg);
+            color: #222;
+            scroll-behavior: smooth;
+        }
+        /* Header */
+        header {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 1.2rem 2rem;
-            background: #fff;
-            color: #222;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
-        nav .left a {
-            font-size: 1.7rem;
+        .navbar .logo {
+            font-size: 2rem;
             font-weight: bold;
-            color: #2193b0;
+            letter-spacing: 2px;
+            color: var(--accent);
+            text-shadow: 1px 2px 8px rgba(0,0,0,0.08);
             text-decoration: none;
-            letter-spacing: 1px;
         }
-        nav .right a {
-            margin-left: 1.7rem;
-            color: #2193b0;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            font-size: 1.05rem;
-            transition: color 0.2s;
-        }
-        nav .right a:hover {
-            color: #17627a;
-        }
-        nav .right i {
-            margin-right: 0.5em;
-        }
-        main {
-            max-width: 1000px;
-            margin: 2.5rem auto;
-            padding: 0 1.5rem;
-        }
-        section {
-            background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-            margin-bottom: 2.5rem;
-            padding: 2.5rem 2rem;
-        }
-        .hero-section {
+        .navbar nav {
             display: flex;
-            flex-wrap: wrap;
-            align-items: stretch;
-            gap: 2.5rem;
-            background: linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%);
-            color: #fff;
-            box-shadow: 0 4px 24px rgba(33,147,176,0.10);
+            gap: 2rem;
         }
-        .hero-section .text {
-            flex: 2;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .hero-section h2 {
-            margin-top: 0;
-            font-size: 2.5rem;
-            letter-spacing: 1px;
-        }
-        .hero-section .links {
-            margin-top: 2rem;
-        }
-        .hero-section .links a {
-            display: inline-block;
-            margin-right: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: #fff;
-            background: rgba(33,147,176,0.18);
-            padding: 0.5rem 1.2rem;
-            border-radius: 6px;
+        .navbar nav a {
+            color: var(--white);
             text-decoration: none;
             font-weight: 500;
-            transition: background 0.2s, color 0.2s;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+            position: relative;
         }
-        .hero-section .links a:hover {
-            background: #fff;
-            color: #2193b0;
+        .navbar nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.2s;
+            position: absolute;
+            left: 0;
+            bottom: -4px;
         }
-        .hero-section .links i {
-            margin-right: 0.4em;
+        .navbar nav a:hover::after {
+            width: 100%;
         }
-        .hero-section .headshot {
+        .navbar .socials {
+            display: flex;
+            gap: 1.2rem;
+        }
+        .navbar .socials a {
+            color: var(--accent);
+            font-size: 1.3rem;
+            transition: color 0.2s;
+        }
+        .navbar .socials a:hover {
+            color: var(--white);
+        }
+        /* Hero */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            background: linear-gradient(120deg, #f7971e 0%, #ffd200 100%);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin: 2.5rem auto 2rem auto;
+            max-width: 1100px;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .avatar {
             flex: 1;
             min-width: 220px;
             max-width: 260px;
-            margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .hero-section .headshot img {
+        .hero .avatar img {
             width: 220px;
             height: 280px;
             object-fit: cover;
-            border-radius: 12px;
-            border: 4px solid #fff;
-            box-shadow: 0 4px 24px rgba(33,147,176,0.15);
+            border-radius: 50%;
+            border: 6px solid var(--white);
+            box-shadow: 0 8px 32px rgba(30,60,114,0.15);
             background: #eee;
             display: block;
         }
-        #skills .cells {
+        .hero .intro {
+            flex: 2;
+            min-width: 300px;
+            color: #222;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .hero .intro h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+        .hero .intro h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--secondary);
+        }
+        .hero .intro p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+        .hero .intro .hero-links {
+            margin-top: 1.2rem;
+            display: flex;
+            gap: 1.2rem;
+        }
+        .hero .intro .hero-links a {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(30,60,114,0.10);
+            transition: background 0.2s, color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.6em;
+        }
+        .hero .intro .hero-links a:hover {
+            background: var(--accent);
+            color: #222;
+        }
+        /* Section */
+        section {
+            max-width: 1000px;
+            margin: 2.5rem auto;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.5rem 2rem;
+        }
+        section h2 {
+            margin-top: 0;
+            font-size: 2rem;
+            color: var(--primary);
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
-            justify-content: center;
         }
-        #skills .cell {
-            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-            border-radius: 10px;
-            padding: 1.2rem 1.5rem;
+        .skill-card {
+            background: linear-gradient(120deg, #1e3c72 0%, #2a5298 100%);
+            color: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem 1rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 120px;
-            box-shadow: 0 2px 8px rgba(253,160,133,0.10);
-            transition: transform 0.15s;
+            box-shadow: 0 2px 12px rgba(30,60,114,0.10);
+            transition: transform 0.15s, box-shadow 0.15s;
+            font-weight: 500;
         }
-        #skills .cell:hover {
-            transform: translateY(-6px) scale(1.04);
+        .skill-card:hover {
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: 0 6px 24px rgba(30,60,114,0.18);
         }
-        #skills .cell img {
-            width: 54px;
-            height: 54px;
+        .skill-card img {
+            width: 48px;
+            height: 48px;
             margin-bottom: 0.7rem;
         }
-        #skills .cell span {
+        .skill-card span {
+            font-size: 1.1rem;
+            margin-top: 0.2rem;
+        }
+        /* Projects */
+        .projects-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .project-card {
+            background: linear-gradient(120deg, #f7971e 0%, #ffd200 100%);
+            border-radius: 12px;
+            padding: 1.5rem 1.2rem;
+            box-shadow: 0 2px 12px rgba(247,151,30,0.10);
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 6px 24px rgba(247,151,30,0.15);
+        }
+        .project-card h3 {
+            margin: 0 0 0.3rem 0;
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        .project-card p {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+            color: #333;
+        }
+        .project-card a {
+            color: var(--primary);
             font-weight: 600;
-            color: #222;
-        }
-        #projects ul {
-            padding-left: 1.2rem;
-        }
-        #projects li {
-            margin-bottom: 0.9rem;
-        }
-        #projects a {
-            color: #2193b0;
             text-decoration: none;
-            font-weight: 500;
             transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4em;
         }
-        #projects a:hover {
-            color: #6dd5ed;
+        .project-card a:hover {
+            color: var(--accent);
             text-decoration: underline;
         }
-        .contact-section .group {
+        /* Contact */
+        .contact-flex {
             display: flex;
             flex-wrap: wrap;
             gap: 2.5rem;
             align-items: flex-start;
         }
-        .contact-section .text {
+        .contact-info {
             flex: 2;
+            font-size: 1.1rem;
+            color: #333;
         }
-        .contact-section form {
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .contact-info a:hover {
+            color: var(--accent);
+        }
+        .contact-form {
             flex: 1;
             min-width: 260px;
+            background: #f5f8fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(30,60,114,0.08);
             display: flex;
             flex-direction: column;
-            gap: 0.9rem;
-            background: #f6d365;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(246,211,101,0.10);
+            gap: 1rem;
         }
-        .contact-section input,
-        .contact-section textarea {
-            padding: 0.6rem;
+        .contact-form label {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.7rem;
             border: 1px solid #e0e0e0;
             border-radius: 6px;
             font-size: 1rem;
-            background: #fff;
+            background: var(--white);
+            font-family: inherit;
         }
-        .contact-section button {
-            background: #2193b0;
-            color: #fff;
+        .contact-form button {
+            background: var(--primary);
+            color: var(--white);
             border: none;
-            padding: 0.8rem 1.2rem;
+            padding: 0.9rem 1.2rem;
             border-radius: 6px;
             font-size: 1rem;
             cursor: pointer;
-            margin-top: 0.5rem;
-            font-weight: 600;
+            font-weight: 700;
             transition: background 0.2s;
+            margin-top: 0.5rem;
         }
-        .contact-section button:hover {
-            background: #17627a;
+        .contact-form button:hover {
+            background: var(--accent);
+            color: #222;
         }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0 1rem 0;
+            color: #888;
+            font-size: 1rem;
+            background: transparent;
+        }
+        /* Responsive */
         @media (max-width: 900px) {
-            main {
-                padding: 0 0.5rem;
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
             }
-            .hero-section {
+            .hero {
+                flex-direction: column;
+                gap: 2rem;
+                padding: 2rem 1rem;
+            }
+            section {
+                padding: 1.5rem 1rem;
+            }
+            .contact-flex {
                 flex-direction: column;
                 gap: 1.5rem;
-                align-items: center;
-                text-align: center;
             }
-            .hero-section .text {
-                align-items: center;
+        }
+        @media (max-width: 600px) {
+            .hero .intro h1 {
+                font-size: 2rem;
             }
-            .hero-section .headshot {
-                margin-bottom: 1.5rem;
+            .hero .intro h2 {
+                font-size: 1.1rem;
             }
-            .contact-section .group {
-                flex-direction: column;
-                gap: 1.5rem;
+            .skills-grid, .projects-list {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-
-    <!-- Navbar -->
-    <nav>
-        <div class="left">
-            <a href="/">Armaan Gyawali</a>
-        </div>
-        <div class="right">
-            <a href="http://github.com/ArmaanGyawali" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-github" aria-label="GitHub"></i>
-                <span>Github</span>
-            </a>
-            <a href="https://www.linkedin.com/in/armaan-gyawali-7a84852a8/" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-linkedin"></i>
-                <span>Linkedin</span>
-            </a>
-            <a href="mailto:armaangyawali7@gmail.com">
-                <i class="fa-solid fa-envelope"></i>
-                <span>Email</span>
-            </a>
-        </div>
-    </nav>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="headshot">
-                <img src="images/image.jpeg" alt="Portrait of Armaan Gyawali" class="profile-pic" loading="lazy" width="220" height="280">
+    <!-- Header/Navbar -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">Armaan Gyawali</a>
+            <nav>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="socials">
+                <a href="http://github.com/ArmaanGyawali" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/armaan-gyawali-7a84852a8/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:armaangyawali7@gmail.com" aria-label="Email"><i class="fa fa-envelope"></i></a>
             </div>
-            <div class="text">
-                <h2>Hi, I'm Armaan 👋</h2>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="avatar">
+            <img src="images/image.jpeg" alt="Portrait of Armaan Gyawali" loading="lazy" width="220" height="280">
+        </div>
+        <div class="intro">
+            <h1>Hi, I'm Armaan 👋</h1>
+            <h2>Software Engineering Student & Aspiring Web Developer</h2>
+            <p>
+                I'm a first-year Software Engineering student passionate about technology and creative problem-solving. I love building things for the web and am currently learning the fundamentals of programming, web development, and modern frameworks. Let's connect and create something amazing!
+            </p>
+            <div class="hero-links">
+                <a href="#skills"><i class="fa fa-code"></i> Skills</a>
+                <a href="#projects"><i class="fa fa-folder-open"></i> Projects</a>
+                <a href="#contact"><i class="fa fa-envelope"></i> Contact</a>
+                <a href="images/Latex%20CV.pdf" download>
+                    <i class="fa fa-download"></i> Download CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div>
+            <p>
+                I’m building a strong foundation in web development, focusing on HTML, CSS, and JavaScript. I’m also exploring modern tools like React and Node.js to create interactive, dynamic websites.
+            </p>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <img src="images/html-logo.webp" alt="HTML logo">
+                    <span>HTML5</span>
+                </div>
+                <div class="skill-card">
+                    <img src="images/css-logo.webp" alt="CSS logo">
+                    <span>CSS3</span>
+                </div>
+                <div class="skill-card">
+                    <img src="images/javascript-logo.webp" alt="JavaScript logo">
+                    <span>JavaScript</span>
+                </div>
+                <div class="skill-card">
+                    <img src="images/react-logo.webp" alt="React logo">
+                    <span>React</span>
+                </div>
+                <div class="skill-card">
+                    <img src="images/node-logo.webp" alt="Node.js logo">
+                    <span>Node.js</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div>
+            <p>
+                Here are some of my recent projects. I’m always learning and building new things!
+            </p>
+            <div class="projects-list">
+                <div class="project-card">
+                    <h3>Ecommerce Store</h3>
+                    <p>A simple online store built with HTML, CSS, and JavaScript. Features product listings, cart functionality, and a responsive design.</p>
+                    <a href="https://armaangyawali.github.io/Ecommerce-store/" target="_blank" rel="noopener noreferrer">
+                        <i class="fa fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3>Python Guessing Game</h3>
+                    <p>A fun command-line game written in Python where you guess a randomly generated number. Great for learning Python basics!</p>
+                    <a href="https://github.com/ArmaanGyawali/Python-guess-game/blob/main/guess_game.py" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3>My CV</h3>
+                    <p>Download my latest CV in PDF format.</p>
+                    <a href="images/Latex CV.pdf" download>
+                        <i class="fa fa-download"></i> Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-flex">
+            <div class="contact-info">
                 <p>
-                    A first-year Software Engineering student currently pursuing my Bachelor's degree. I'm passionate about technology and excited to start my journey in coding and web development. I'm learning the fundamentals of programming and enjoy exploring how software can solve real-world problems.
+                    Thanks for visiting my portfolio! If you’d like to get in touch, feel free to drop me an email or use the contact form. I’d love to connect and chat about tech, projects, or opportunities.<br>
+                    <strong>Email:</strong> <a href="mailto:armaangyawali7@gmail.com">armaangyawali7@gmail.com</a>
                 </p>
-                <div class="links">
-                    <a href="#skills">
-                        <i class="fa-solid fa-code"></i>
-                        <span>Skills</span>
-                    </a>
-                    <a href="#contact">
-                        <i class="fa-solid fa-envelope"></i>
-                        <span>Contact</span>
-                    </a>
-                </div>
             </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="text">
-            I’m learning the basics of web development, including HTML, CSS, and JavaScript. I’ve also started exploring tools like React and Node.js to build interactive websites.
-            </div>
-            <div class="cells">
-            <div class="cell">
-                <img src="images/html-logo.webp" alt="HTML logo" width="54" height="54">
-                <span>HTML</span>
-            </div>
-            <div class="cell">
-                <img src="images/css-logo.webp" alt="CSS logo" width="54" height="54">
-                <span>CSS</span>
-            </div>
-            <div class="cell">
-                <img src="images/javascript-logo.webp" alt="JavaScript logo" width="54" height="54">
-                <span>JavaScript</span>
-            </div>
-            <div class="cell">
-                <img src="images/node-logo.webp" alt="Node.js logo" width="54" height="54">
-                <span>Node.js</span>
-            </div>
-            <div class="cell">
-                <img src="images/react-logo.webp" alt="React logo" width="54" height="54">
-                <span>React</span>
-            </div>
-            </div>
-        </section>
-
-        <div style="height: 2.5rem;"></div>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="text">
-            Here’s a project I’ve worked on:
-            </div>
-            <ul>
-            <li>
-                <a href="https://armaangyawali.github.io/Ecommerce-store/" target="_blank" rel="noopener noreferrer">
-                Ecommerce Store
-                </a>
-            </li>
-            <li>
-                <a href="images/Latex CV.pdf" download>
-                Download CV (PDF)
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/ArmaanGyawali/Python-guess-game/blob/main/guess_game.py" target="_blank" rel="noopener noreferrer">
-                Python Guessing Game
-                </a>
-            </li>
-            </ul>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <h2>Contact</h2>
-            <div class="group">
-                <div class="text">
-                    Thanks for visiting my portfolio! If you’d like to get in touch, feel free to drop me an email. I’d be happy to connect or chat about tech and projects.<br>
-                    📧 Email: <a href="mailto:armaangyawali7@gmail.com">armaangyawali7@gmail.com</a>
-                </div>
-                <form action="https://formspree.io/f/yourFormIDHere" method="POST" autocomplete="on">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required autocomplete="name">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required autocomplete="email">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-        </section>
-    </main>
+            <form class="contact-form" action="https://formspree.io/f/yourActualFormID" method="POST" autocomplete="on">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required autocomplete="name">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
 </body>
 </html>
